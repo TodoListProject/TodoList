@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>To Do Something</h1>
+	</header>
+	<main>
+		<div>
+			<h2>what are you up to?</h2>
+		</div>
+		<div id="todos">
+			
+		</div>
+		<textarea placeholder="Do Something" id='txtarea'></textarea>
+		<button class="btn"> ADD TODO </button>
+	</main>
+	<footer>
+		
+	</footer>
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="todolist.js"> </script> 
+	<script>
+		$('.btn').on('click', function (){
+			var message = $('#txtarea').val();
+			if(message === ""){
+				alert("sorry, you can not enter empty todo")
+			} else {
+				var todo1 = todo(todolist.length, message)
+				todolist.push(todo1)
+				console.log(todolist)
+				$('#todos').append(`<div> ${message} <input type= "checkbox" ></div>`);
+				$('#txtarea').val("");
+			}       
+		})
+	</script>
+</body>
+</html>
